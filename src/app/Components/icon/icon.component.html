@@ -1,0 +1,23 @@
+<form>
+    <input placeholder="Search by icon name" id="searchIcons" type="text" class="input" [(ngModel)]="searchStr" name="first">
+    <label for="searchIcons"></label>
+</form>
+<div class="containerIcon">
+    <div *ngFor="let icon of icons | keyValuePairs | search:searchStr" class="iconList">
+        <div [innerHtml]="icon.value | safeHtml" class="icons" 
+        [ngClass]="{
+        blue: textColor === 'blue',
+        green: textColor === 'green',
+        red: textColor === 'red',
+        orange: textColor === 'orange'}">
+        </div>
+        <div class="iconsName">{{icon.key}}</div>
+    </div>
+</div>
+<div class="buttons">
+    <button class="buttons default" (click)="textColor = 'default'">Default</button>
+    <button class="buttons blue" (click)="textColor = 'blue'">Blue</button>
+    <button class="buttons green" (click)="textColor = 'green'">Green</button>
+    <button class="buttons red" (click)="textColor = 'red'">Red</button>
+    <button class="buttons orange" (click)="textColor = 'orange'">Orange</button>
+</div>

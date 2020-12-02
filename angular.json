@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "icons-app"
+    }
+  },
+  "defaultProject": "icons-app",
+  "cli": {
+    "analytics": false
+  }
 }
